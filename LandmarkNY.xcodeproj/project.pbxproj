@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E9CD4D6021B7238700D2D89F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CD4D5F21B7238700D2D89F /* DiscoverViewController.swift */; };
 		E9CD4D6221B7283B00D2D89F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CD4D6121B7283B00D2D89F /* DetailsViewController.swift */; };
+		E9E6384521BE066A008559B2 /* inputFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9E6384421BE066A008559B2 /* inputFile.txt */; };
+		E9E6384721BE0F4A008559B2 /* inputFile2.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9E6384621BE0F4A008559B2 /* inputFile2.txt */; };
 		E9F877ED21BCBBE70096646B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F877EC21BCBBE70096646B /* Location.swift */; };
 		F80F40A221A5173D00D166CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F40A121A5173D00D166CB /* AppDelegate.swift */; };
 		F80F40A421A5173D00D166CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F40A321A5173D00D166CB /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		E9CD4D5F21B7238700D2D89F /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		E9CD4D6121B7283B00D2D89F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		E9E6384421BE066A008559B2 /* inputFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = inputFile.txt; path = ../../../Desktop/inputFile.txt; sourceTree = "<group>"; };
+		E9E6384621BE0F4A008559B2 /* inputFile2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputFile2.txt; sourceTree = "<group>"; };
 		E9F877EC21BCBBE70096646B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F80F409E21A5173D00D166CB /* LandmarkNY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandmarkNY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80F40A121A5173D00D166CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,11 +64,13 @@
 		F80F40A021A5173D00D166CB /* LandmarkNY */ = {
 			isa = PBXGroup;
 			children = (
+				E9E6384421BE066A008559B2 /* inputFile.txt */,
 				F80F40A121A5173D00D166CB /* AppDelegate.swift */,
 				F80F40A321A5173D00D166CB /* ViewController.swift */,
 				F80F40A521A5173D00D166CB /* Main.storyboard */,
 				E9F877EC21BCBBE70096646B /* Location.swift */,
 				E9CD4D6121B7283B00D2D89F /* DetailsViewController.swift */,
+				E9E6384621BE0F4A008559B2 /* inputFile2.txt */,
 				E9CD4D5F21B7238700D2D89F /* DiscoverViewController.swift */,
 				F80F40A821A5173D00D166CB /* Assets.xcassets */,
 				F80F40AA21A5173D00D166CB /* LaunchScreen.storyboard */,
@@ -136,6 +142,8 @@
 				F80F40AC21A5173D00D166CB /* LaunchScreen.storyboard in Resources */,
 				F80F40A921A5173D00D166CB /* Assets.xcassets in Resources */,
 				F80F40A721A5173D00D166CB /* Main.storyboard in Resources */,
+				E9E6384521BE066A008559B2 /* inputFile.txt in Resources */,
+				E9E6384721BE0F4A008559B2 /* inputFile2.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
