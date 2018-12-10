@@ -16,7 +16,8 @@ class DiscoverViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var discoverBar: UITabBarItem!
-    @IBOutlet weak var tabBar: UITabBarItem!
+    
+    @IBOutlet weak var tourBar: UITabBarItem!
     @IBOutlet weak var menuBar: UITabBar!
     @IBOutlet weak var exitTour: UIButton!
     @IBOutlet weak var prevLoc: UIButton!
@@ -29,6 +30,7 @@ class DiscoverViewController: UIViewController {
     var currentView: Int=1
     var currentTour = [MKAnnotation]()
     var tourLoc:Int!
+    var currentSegue:String?
     //NYU
     let initialLocation = CLLocation(latitude: 40.724663768, longitude: -73.990329372)
     
@@ -37,6 +39,7 @@ class DiscoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        menuBar.delegate = self
         //add annotations
         loadLandmarks()
         checkLocationAuthorizationStatus()
@@ -47,8 +50,14 @@ class DiscoverViewController: UIViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let details:DetailsViewController = segue.destination as! DetailsViewController
-        details.desiredLandmark=clickedInfo
+        if(currentSegue=="details"){
+            let details:DetailsViewController = segue.destination as! DetailsViewController
+            
+            details.desiredLandmark=clickedInfo
+        }
+        else if(currentSegue=="tours"){
+            
+        }
     }
     let locationManager = CLLocationManager()
     func checkLocationAuthorizationStatus(){
@@ -179,6 +188,7 @@ extension DiscoverViewController: MKMapViewDelegate {
                  calloutAccessoryControlTapped control: UIControl) {
         let location = view.annotation as! Location
         clickedInfo=location.title
+        currentSegue="details"
         performSegue(withIdentifier: "showDetail", sender: self)
     }
     
@@ -186,3 +196,11 @@ extension DiscoverViewController: MKMapViewDelegate {
 
 
 
+extension DiscoverViewController: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if(item == tourBar){
+            currentSegue = "tours"
+            performSegue(withIdentifier: "tour", sender: self)
+        }
+    }
+}

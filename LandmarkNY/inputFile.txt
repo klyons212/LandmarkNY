@@ -1,4 +1,4 @@
-Freedom Tower,40.712952,-74.013208
+One World Trade Center,40.712952,-74.013208
 New York Stock Exchange,40.706960,-74.011421
 Trinity Church,40.707900,-74.011813
 New York City Hall,40.712749,-74.006006

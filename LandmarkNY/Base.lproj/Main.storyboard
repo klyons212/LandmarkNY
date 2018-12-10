@@ -89,13 +89,40 @@
                         <outlet property="navBar" destination="IKx-cV-Qb8" id="OLv-mU-3ol"/>
                         <outlet property="nextLoc" destination="fpf-Ui-7Me" id="NpS-7U-Eiu"/>
                         <outlet property="prevLoc" destination="zRx-TR-Dua" id="mOZ-gt-C9r"/>
-                        <outlet property="tabBar" destination="D7o-0K-dhm" id="XRD-ss-pbF"/>
+                        <outlet property="tourBar" destination="D7o-0K-dhm" id="zy4-aL-Vdo"/>
                         <segue destination="NCM-E2-big" kind="presentation" identifier="showDetail" id="vRG-sv-FRN"/>
+                        <segue destination="z5G-bD-39X" kind="show" identifier="tour" id="mVf-bW-wkc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpN-mZ-Zkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571.01449275362324" y="-378.34821428571428"/>
+            <point key="canvasLocation" x="570" y="-378"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="81M-Zf-EuG">
+            <objects>
+                <viewController id="z5G-bD-39X" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aZM-UQ-xSh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyH-62-kDF">
+                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Discover" image="discover" id="CEz-cy-6we" userLabel="Discover"/>
+                                    <tabBarItem title="Tour" image="tour" id="xbn-15-qaA"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="iav-wG-wbe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UI7-Ml-Fv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="362"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="jmE-6v-0oY">

@@ -52,6 +52,8 @@ class DetailsViewController: UIViewController {
     
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+//        let temp:DiscoverViewController=self.parent as! DiscoverViewController
+//        temp.exitTour.isHidden=false;
     }
     
     func loadDetail(landmark: String){
