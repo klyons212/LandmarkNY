@@ -12,8 +12,16 @@ import MapKit
 
 class DiscoverViewController: UIViewController {
     
+    @IBOutlet weak var exitTour: UIButton!
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var menuBar: UITabBar!
+    @IBOutlet weak var discoverBar: UITabBarItem!
+    @IBOutlet weak var tabBar: UITabBarItem!
+    //0=discover, 1=tour
+    var currentView: Int=0
+    
     
     //NYU
     let initialLocation = CLLocation(latitude: 40.724663768, longitude: -73.990329372)
@@ -30,7 +38,14 @@ class DiscoverViewController: UIViewController {
         super.viewDidLoad()
         centerMapOnLocation(location: initialLocation)
         mapView.delegate = self
-
+        if(currentView==0){
+            exitTour.isHidden=true
+            menuBar.selectedItem=discoverBar
+        }
+        else{
+            exitTour.isHidden=false
+            menuBar.selectedItem=discoverBar
+        }
         //add annotation
         let location = Location(title: "Freedom Tower", coordinate: CLLocationCoordinate2D(latitude: 40.712952, longitude: -74.013208))
         
