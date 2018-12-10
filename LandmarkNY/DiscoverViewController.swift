@@ -28,7 +28,7 @@ class DiscoverViewController: UIViewController {
     //0=discover, 1=tour
     var currentView: Int=1
     var currentTour = [MKAnnotation]()
-    var tourLoc:Int=5
+    var tourLoc:Int!
     //NYU
     let initialLocation = CLLocation(latitude: 40.724663768, longitude: -73.990329372)
     
@@ -36,15 +36,14 @@ class DiscoverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         //add annotations
         loadLandmarks()
-        currentTour=mapView.annotations
         centerMapOnLocation(location: initialLocation)
-        mapView.delegate = self
+        currentTour=mapView.annotations
+        tourLoc=0
         refreshInterface()
         
-        
-
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let details:DetailsViewController = segue.destination as! DetailsViewController
