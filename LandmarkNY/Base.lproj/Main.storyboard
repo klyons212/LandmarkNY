@@ -18,6 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vIa-Gt-Pqz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="804"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWN-mp-ieP">
+                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items/>
+                            </tabBar>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gA4-R0-qGN">
                                 <rect key="frame" x="0.0" y="847" width="414" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -27,14 +37,44 @@
                                     <tabBarItem title="Tour" image="tour" id="D7o-0K-dhm"/>
                                 </items>
                             </tabBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vIa-Gt-Pqz">
-                                <rect key="frame" x="0.0" y="44" width="414" height="803"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRx-TR-Dua">
+                                <rect key="frame" x="73" y="856" width="59" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-ev-TRs">
-                                <rect key="frame" x="36" y="91" width="60" height="30"/>
+                                <state key="normal" title="Previous"/>
+                                <connections>
+                                    <action selector="prevButton:" destination="Vrh-fm-v0P" eventType="touchUpInside" id="TzF-fq-jco"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IKx-cV-Qb8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="6zM-k3-4eP">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="m7j-DT-2a1">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lhf-ev-TRs">
+                                                <rect key="frame" x="20" y="7" width="60" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Exit Tour"/>
+                                                <connections>
+                                                    <action selector="quitTour:" destination="Vrh-fm-v0P" eventType="touchUpInside" id="TO9-Tj-zMj"/>
+                                                </connections>
+                                            </button>
+                                            <connections>
+                                                <action selector="exitTour:" destination="Vrh-fm-v0P" id="NFO-SJ-Aep"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-Ui-7Me">
+                                <rect key="frame" x="293" y="856" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Exit Tour"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButton:" destination="Vrh-fm-v0P" eventType="touchUpInside" id="fpH-AI-OC3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,16 +82,20 @@
                     </view>
                     <connections>
                         <outlet property="discoverBar" destination="r0H-Ub-DQe" id="XYH-rm-LQ4"/>
-                        <outlet property="exitTour" destination="lhf-ev-TRs" id="Jun-32-aUX"/>
+                        <outlet property="exitTour" destination="lhf-ev-TRs" id="0V5-ha-hd6"/>
+                        <outlet property="locName" destination="6zM-k3-4eP" id="KmB-fe-tDm"/>
                         <outlet property="mapView" destination="vIa-Gt-Pqz" id="uOU-jU-yfB"/>
                         <outlet property="menuBar" destination="gA4-R0-qGN" id="BaS-9q-4ry"/>
+                        <outlet property="navBar" destination="IKx-cV-Qb8" id="OLv-mU-3ol"/>
+                        <outlet property="nextLoc" destination="fpf-Ui-7Me" id="NpS-7U-Eiu"/>
+                        <outlet property="prevLoc" destination="zRx-TR-Dua" id="mOZ-gt-C9r"/>
                         <outlet property="tabBar" destination="D7o-0K-dhm" id="XRD-ss-pbF"/>
                         <segue destination="NCM-E2-big" kind="presentation" identifier="showDetail" id="vRG-sv-FRN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpN-mZ-Zkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="572" y="-378"/>
+            <point key="canvasLocation" x="571.01449275362324" y="-378.34821428571428"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="jmE-6v-0oY">

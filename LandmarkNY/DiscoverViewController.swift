@@ -19,10 +19,16 @@ class DiscoverViewController: UIViewController {
     @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet weak var menuBar: UITabBar!
     @IBOutlet weak var exitTour: UIButton!
+    @IBOutlet weak var prevLoc: UIButton!
+    @IBOutlet weak var nextLoc: UIButton!
+    @IBOutlet weak var locName: UINavigationItem!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     var clickedInfo:String?
     //0=discover, 1=tour
-    var currentView: Int=0
+    var currentView: Int=1
+    var currentTour = [MKAnnotation]()
+    var tourLoc:Int=5
     //NYU
     let initialLocation = CLLocation(latitude: 40.724663768, longitude: -73.990329372)
     
@@ -30,20 +36,13 @@ class DiscoverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        centerMapOnLocation(location: initialLocation)
-        mapView.delegate = self
-        
-        //manage buttons
-        if(currentView==0){
-            exitTour.isHidden=true
-            menuBar.selectedItem=discoverBar
-        }
-        else{
-            exitTour.isHidden=false
-            menuBar.selectedItem=discoverBar
-        }
         //add annotations
         loadLandmarks()
+        currentTour=mapView.annotations
+        centerMapOnLocation(location: initialLocation)
+        mapView.delegate = self
+        refreshInterface()
+        
         
 
     }
@@ -60,6 +59,49 @@ class DiscoverViewController: UIViewController {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    func refreshInterface(){
+        //manage buttons
+        if(currentView==0){
+            exitTour.isHidden=true
+            prevLoc.isHidden=true
+            nextLoc.isHidden=true
+            menuBar.isHidden=false
+            navBar.isHidden=true
+            menuBar.selectedItem=discoverBar
+        }
+        else{
+            exitTour.isHidden=false
+            prevLoc.isHidden=false
+            nextLoc.isHidden=false
+            menuBar.isHidden=true
+            navBar.isHidden=false
+            locName.title=currentTour[tourLoc].title as! String
+            let currLoc=CLLocation(latitude: currentTour[tourLoc].coordinate.latitude, longitude: currentTour[tourLoc].coordinate.longitude)
+            centerMapOnLocation(location: currLoc)
+        }
+    }
+    @IBAction func nextButton(_ sender: Any) {
+        if(tourLoc<currentTour.count-1){
+            tourLoc+=1
+            locName.title=currentTour[tourLoc].title as! String
+            let currLoc=CLLocation(latitude: currentTour[tourLoc].coordinate.latitude, longitude: currentTour[tourLoc].coordinate.longitude)
+            centerMapOnLocation(location: currLoc)
+        }
+    }
+    @IBAction func prevButton(_ sender: Any) {
+        if(tourLoc>0){
+            tourLoc-=1
+            locName.title=currentTour[tourLoc].title as! String
+            let currLoc=CLLocation(latitude: currentTour[tourLoc].coordinate.latitude, longitude: currentTour[tourLoc].coordinate.longitude)
+            centerMapOnLocation(location: currLoc)
+            
+        }
+    }
+    
+    @IBAction func quitTour(_ sender: Any) {
+        currentView=0;
+        refreshInterface()
+    }
     //Input Helper
     func arrayFromContentsOfFileWithName(fileName: String) -> [String]? {
         guard let path = Bundle.main.path(forResource: fileName, ofType: "txt") else {

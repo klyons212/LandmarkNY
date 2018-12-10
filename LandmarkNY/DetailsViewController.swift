@@ -23,16 +23,9 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let nameOfFile = "inputFile2"
         landmarks = arrayFromContentsOfFileWithName(fileName: nameOfFile)!
-        
-        //Sample string
-
         loadDetail(landmark: desiredLandmark!)
-        
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,18 +60,15 @@ class DetailsViewController: UIViewController {
             
             let temp = landmarks[i];
             
-            
             let splitted = temp.components(separatedBy: ",");
             let title = splitted[0]
             print(title)
-            
             
             
             if(title == landmark){
                 
                 let description = splitted[1]
                 let image = splitted[2]
-                
                 
                 detailsTitle.text = title
                 detailsDesc.text = description
@@ -92,27 +82,6 @@ class DetailsViewController: UIViewController {
             
         }
     }
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
 
