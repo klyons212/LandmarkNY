@@ -13,5 +13,5 @@ Herald Square,40.750241,-73.987724
 Bryant Park,40.753800,-73.983739
 Times Square,40.758530,-73.985327
 Rockefeller Center,40.758660,-73.978600
-The Plaza Hotel & the Apple Store on 59th st,40.764223,-73.973501
+The Plaza Hotel & the Apple Store on 59th,40.764223,-73.973501
 Central Park Carousel,40.769910,-73.975315
