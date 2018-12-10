@@ -26,6 +26,7 @@ class DetailsViewController: UIViewController {
         let nameOfFile = "inputFile2"
         landmarks = arrayFromContentsOfFileWithName(fileName: nameOfFile)!
         loadDetail(landmark: desiredLandmark!)
+        print(desiredLandmark)
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,13 +57,13 @@ class DetailsViewController: UIViewController {
     func loadDetail(landmark: String){
         var i = 0;
         
-        while(i<17){
+        while(i<landmarks.count){
             
             let temp = landmarks[i];
             
             let splitted = temp.components(separatedBy: ",");
             let title = splitted[0]
-            print(title)
+            //print(title)
             
             
             if(title == landmark){
