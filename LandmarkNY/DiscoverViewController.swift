@@ -39,6 +39,7 @@ class DiscoverViewController: UIViewController {
         mapView.delegate = self
         //add annotations
         loadLandmarks()
+        checkLocationAuthorizationStatus()
         centerMapOnLocation(location: initialLocation)
         currentTour=mapView.annotations
         tourLoc=0
@@ -49,7 +50,15 @@ class DiscoverViewController: UIViewController {
         let details:DetailsViewController = segue.destination as! DetailsViewController
         details.desiredLandmark=clickedInfo
     }
-    
+    let locationManager = CLLocationManager()
+    func checkLocationAuthorizationStatus(){
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
+            mapView.showsUserLocation = true
+        }
+        else{
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
     //Helper
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
@@ -172,6 +181,7 @@ extension DiscoverViewController: MKMapViewDelegate {
         clickedInfo=location.title
         performSegue(withIdentifier: "showDetail", sender: self)
     }
+    
 }
 
 
