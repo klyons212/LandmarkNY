@@ -13,12 +13,13 @@ import UIKit
 class DetailsViewController: UIViewController {
     
     
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var detailsTitle: UILabel!
     @IBOutlet weak var detailsImage: UIImageView!
     @IBOutlet weak var detailsDesc: UITextView!
     
     var landmarks = [String]()
-    
+    var desiredLandmark:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +28,8 @@ class DetailsViewController: UIViewController {
         landmarks = arrayFromContentsOfFileWithName(fileName: nameOfFile)!
         
         //Sample string
-        let str = "Trinity Church"
-        
-        loadDetail(landmark: str)
-        
-        
-        
-        
-        
-        
+
+        loadDetail(landmark: desiredLandmark!)
         
         
         
@@ -62,11 +56,11 @@ class DetailsViewController: UIViewController {
     }
     
     
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func loadDetail(landmark: String){
-        
-        
-        
         var i = 0;
         
         while(i<17){
@@ -94,11 +88,7 @@ class DetailsViewController: UIViewController {
     
             }
             
-            
-            
-            
             i += 1;
-            
             
         }
     }

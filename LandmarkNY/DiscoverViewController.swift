@@ -9,12 +9,20 @@
 import Foundation
 import UIKit
 import MapKit
+//import "DetailsViewController.swift"
 
 class DiscoverViewController: UIViewController {
     
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var discoverBar: UITabBarItem!
+    @IBOutlet weak var tabBar: UITabBarItem!
+    @IBOutlet weak var menuBar: UITabBar!
+    @IBOutlet weak var exitTour: UIButton!
     
+    var clickedInfo:String?
+    //0=discover, 1=tour
+    var currentView: Int=0
     //NYU
     let initialLocation = CLLocation(latitude: 40.724663768, longitude: -73.990329372)
     
@@ -24,18 +32,25 @@ class DiscoverViewController: UIViewController {
         super.viewDidLoad()
         centerMapOnLocation(location: initialLocation)
         mapView.delegate = self
-
+        
+        //manage buttons
+        if(currentView==0){
+            exitTour.isHidden=true
+            menuBar.selectedItem=discoverBar
+        }
+        else{
+            exitTour.isHidden=false
+            menuBar.selectedItem=discoverBar
+        }
         //add annotations
-        
         loadLandmarks()
-        
-        
-        
-        
         
 
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let details:DetailsViewController = segue.destination as! DetailsViewController
+        details.desiredLandmark=clickedInfo
+    }
     
     //Helper
     let regionRadius: CLLocationDistance = 1000
@@ -68,7 +83,6 @@ class DiscoverViewController: UIViewController {
         while(i<17){
             let temp = landmarks[i];
             
-            
             let splitted = temp.components(separatedBy: ",");
             let x = splitted[1]
             let y = splitted[2]
@@ -82,20 +96,9 @@ class DiscoverViewController: UIViewController {
             
             mapView.addAnnotation(location)
             
-            i += 1;
-            
-            
+            i += 1
         }
-        
     }
-    
-    
-    
-
-    
-    
-    
-    
 }
 
 
@@ -120,6 +123,13 @@ extension DiscoverViewController: MKMapViewDelegate {
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         return view
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
+                 calloutAccessoryControlTapped control: UIControl) {
+        let location = view.annotation as! Location
+        clickedInfo=location.title
+        performSegue(withIdentifier: "showDetail", sender: self)
     }
 }
 

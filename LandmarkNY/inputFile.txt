@@ -1,0 +1,17 @@
+Freedom Tower,40.712952,-74.013208
+New York Stock Exchange,40.706960,-74.011421
+Trinity Church,40.707900,-74.011813
+New York City Hall,40.712749,-74.006006
+Brooklyn Bridge,40.707477,-73.998433
+Sheridan Square,40.733661,-74.002748
+Washington Sq. Park,40.730939,-73.997375
+Astor Place,40.729835,-73.991062
+St. Mark’s Place,40.729069,-73.988798
+Tompkins Square Park,40.726319,-73.981828
+Empire State Building,40.748587,-73.985922
+Herald Square,40.750241,-73.987724
+Bryant Park,40.753800,-73.983739
+Times Square,40.758530,-73.985327
+Rockefeller Center,40.758660,-73.978600
+The Plaza Hotel & the Apple Store on 59th st,40.764223,-73.973501
+Central Park Carousel,40.769910,-73.975315

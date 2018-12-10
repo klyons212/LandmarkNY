@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/antonysunwoo/Desktop/xcode projects/LandmarkNY/LandmarkNY/inputFIle.txt">
-   </FileRef>
-   <FileRef
       location = "self:LandmarkNY.xcodeproj">
    </FileRef>
 </Workspace>
