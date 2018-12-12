@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE62044621BEC098008AD488 /* inputFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = DE62044521BEC05E008AD488 /* inputFile.txt */; };
 		DE90574021C1618C0038637B /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE90573F21C1618C0038637B /* TourViewController.swift */; };
+		DE90574221C1A7F70038637B /* Screen Shot 2018-11-05 at 3.50.14 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = DE90574121C1A7F70038637B /* Screen Shot 2018-11-05 at 3.50.14 PM.png */; };
 		E9CD4D6021B7238700D2D89F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CD4D5F21B7238700D2D89F /* DiscoverViewController.swift */; };
 		E9CD4D6221B7283B00D2D89F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CD4D6121B7283B00D2D89F /* DetailsViewController.swift */; };
 		E9E6384721BE0F4A008559B2 /* inputFile2.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9E6384621BE0F4A008559B2 /* inputFile2.txt */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		DE62044521BEC05E008AD488 /* inputFile.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputFile.txt; sourceTree = "<group>"; usesTabs = 0; };
 		DE90573F21C1618C0038637B /* TourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
+		DE90574121C1A7F70038637B /* Screen Shot 2018-11-05 at 3.50.14 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2018-11-05 at 3.50.14 PM.png"; sourceTree = "<group>"; };
 		E9CD4D5F21B7238700D2D89F /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		E9CD4D6121B7283B00D2D89F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E9E6384621BE0F4A008559B2 /* inputFile2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputFile2.txt; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				E9F877EC21BCBBE70096646B /* Location.swift */,
 				F80F40A821A5173D00D166CB /* Assets.xcassets */,
 				F80F40AA21A5173D00D166CB /* LaunchScreen.storyboard */,
+				DE90574121C1A7F70038637B /* Screen Shot 2018-11-05 at 3.50.14 PM.png */,
 				F80F40AD21A5173D00D166CB /* Info.plist */,
 			);
 			path = LandmarkNY;
@@ -146,6 +149,7 @@
 				F80F40AC21A5173D00D166CB /* LaunchScreen.storyboard in Resources */,
 				F80F40A921A5173D00D166CB /* Assets.xcassets in Resources */,
 				F80F40A721A5173D00D166CB /* Main.storyboard in Resources */,
+				DE90574221C1A7F70038637B /* Screen Shot 2018-11-05 at 3.50.14 PM.png in Resources */,
 				E9E6384721BE0F4A008559B2 /* inputFile2.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

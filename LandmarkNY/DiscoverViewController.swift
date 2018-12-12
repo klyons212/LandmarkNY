@@ -27,8 +27,10 @@ class DiscoverViewController: UIViewController {
     
     var clickedInfo:String?
     //0=discover, 1=tour
-    var currentView: Int=1
+    var currentView: Int=0
     var currentTour = [MKAnnotation]()
+    var tours = [[MKAnnotation]]()
+    var pickedTour : NSInteger=0
     var tourLoc:Int!
     //NYU
     let initialLocation = CLLocation(latitude: 40.724663768, longitude: -73.990329372)
@@ -41,12 +43,17 @@ class DiscoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        var temp = [MKAnnotation]()
+        tours.append(temp)
+        var temp1 = [MKAnnotation]()
+        tours.append(temp1)
+        var temp2 = [MKAnnotation]()
+        tours.append(temp2)
+        
         //add annotations
         loadLandmarks()
         checkLocationAuthorizationStatus()
         centerMapOnLocation(location: initialLocation)
-        currentTour=mapView.annotations
-        tourLoc=0
         refreshInterface()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,6 +89,8 @@ class DiscoverViewController: UIViewController {
 //            menuBar.selectedItem=discoverBar
         }
         else{
+            currentTour=tours[pickedTour]
+            tourLoc=0
             drawTourRoute()
             exitTour.isHidden=false
             prevLoc.isHidden=false
@@ -172,7 +181,15 @@ class DiscoverViewController: UIViewController {
             let location = Location(title: splitted[0], coordinate: coord)
             
             mapView.addAnnotation(location)
-            
+            if(i<5){
+                tours[0].append(location)
+            }
+            else if(i<10){
+                tours[1].append(location)
+            }
+            else if(i<17){
+                tours[2].append(location)
+            }
             i += 1
         }
     }

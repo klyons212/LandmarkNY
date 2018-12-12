@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Discover-->
+        <!--Map-->
         <scene sceneID="PbR-Ph-HuQ">
             <objects>
                 <viewController storyboardIdentifier="DiscoverViewController" id="Vrh-fm-v0P" customClass="DiscoverViewController" customModule="LandmarkNY" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +65,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="KVJ-yH-2pB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Discover" image="discover" id="pyl-pv-3up"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="discover" id="pyl-pv-3up"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="exitTour" destination="lhf-ev-TRs" id="0V5-ha-hd6"/>
@@ -88,14 +88,48 @@
                     <view key="view" contentMode="scaleToFill" id="aZM-UQ-xSh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyK-rJ-eAi">
+                                <rect key="frame" x="143" y="259" width="128" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Tour 1"/>
+                                <connections>
+                                    <action selector="pickTour1:" destination="z5G-bD-39X" eventType="touchUpInside" id="sAL-jY-qkb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9h-98-3iy">
+                                <rect key="frame" x="143" y="516" width="128" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Tour 3"/>
+                                <connections>
+                                    <action selector="pickTour3:" destination="z5G-bD-39X" eventType="touchUpInside" id="2lB-Ys-f1u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0M7-yg-vOH">
+                                <rect key="frame" x="143" y="393" width="128" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Tour 2"/>
+                                <connections>
+                                    <action selector="pickTour2:" destination="z5G-bD-39X" eventType="touchUpInside" id="qMi-jM-W6h"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iav-wG-wbe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tour" image="tour" id="Jxf-Aa-ETc"/>
+                    <connections>
+                        <outlet property="tour1" destination="LyK-rJ-eAi" id="ckI-H7-Gqr"/>
+                        <outlet property="tour2" destination="0M7-yg-vOH" id="uRT-cB-mWd"/>
+                        <outlet property="tour3" destination="c9h-98-3iy" id="bWI-Oy-uOC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UI7-Ml-Fv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="362"/>
+            <point key="canvasLocation" x="1476.8115942028987" y="410.49107142857139"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="jmE-6v-0oY">
