@@ -13,7 +13,7 @@ import MapKit
 
 class DiscoverViewController: UIViewController {
     
-    
+
     @IBOutlet weak var mapView: MKMapView!
 //    @IBOutlet weak var discoverBar: UITabBarItem!
 //
@@ -48,7 +48,6 @@ class DiscoverViewController: UIViewController {
         currentTour=mapView.annotations
         tourLoc=0
         refreshInterface()
-        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let details:DetailsViewController = segue.destination as! DetailsViewController
@@ -74,6 +73,7 @@ class DiscoverViewController: UIViewController {
     func refreshInterface(){
         //manage buttons
         if(currentView==0){
+            mapView.removeOverlays(mapView.overlays)
             exitTour.isHidden=true
             prevLoc.isHidden=true
             nextLoc.isHidden=true
@@ -82,6 +82,7 @@ class DiscoverViewController: UIViewController {
 //            menuBar.selectedItem=discoverBar
         }
         else{
+            drawTourRoute()
             exitTour.isHidden=false
             prevLoc.isHidden=false
             nextLoc.isHidden=false
@@ -93,10 +94,28 @@ class DiscoverViewController: UIViewController {
         }
     }
     
-    func getTourRoute(){
+    func drawTourRoute(){
+        for i in 0..<currentTour.count-1{
+            let dirRequest = MKDirections.Request()
+            dirRequest.source=MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: currentTour[i].coordinate.latitude, longitude: currentTour[i].coordinate.longitude)))
+            dirRequest.destination=MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: currentTour[i+1].coordinate.latitude, longitude: currentTour[i+1].coordinate.longitude)))
+            dirRequest.transportType = .walking
+            let directions = MKDirections(request: dirRequest)
+            directions.calculate(){response,error in
+                guard let response = response else{
+                    if let error = error{
+                        print("Error: \(error)")
+                    }
+                    return
+                }
+                let route = response.routes[0]
+                self.mapView.addOverlay(route.polyline, level: MKOverlayLevel.aboveRoads)
+            }
+        }
+    }
+    func test(response:MKDirections.Response, error: Error){
         
     }
-    
     @IBAction func nextButton(_ sender: Any) {
         if(tourLoc<currentTour.count-1){
             tourLoc+=1
@@ -190,5 +209,11 @@ extension DiscoverViewController: MKMapViewDelegate {
         performSegue(withIdentifier: "showDetail", sender: self)
     }
     
+    func mapView(_ mapView: MKMapView,rendererFor overlay:MKOverlay) ->MKOverlayRenderer{
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.red
+        renderer.lineWidth = 4.0
+        return renderer
+    }
 }
 
