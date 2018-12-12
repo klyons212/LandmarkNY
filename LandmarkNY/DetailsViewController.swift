@@ -26,7 +26,6 @@ class DetailsViewController: UIViewController {
         let nameOfFile = "inputFile2"
         landmarks = arrayFromContentsOfFileWithName(fileName: nameOfFile)!
         loadDetail(landmark: desiredLandmark!)
-        print(desiredLandmark)
     }
     
     override func didReceiveMemoryWarning() {

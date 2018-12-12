@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vrh-fm-v0P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VmQ-uG-fRf">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Discover View Controller-->
+        <!--Discover-->
         <scene sceneID="PbR-Ph-HuQ">
             <objects>
                 <viewController storyboardIdentifier="DiscoverViewController" id="Vrh-fm-v0P" customClass="DiscoverViewController" customModule="LandmarkNY" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,29 +22,6 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="804"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWN-mp-ieP">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items/>
-                            </tabBar>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gA4-R0-qGN">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem title="Discover" image="discover" id="r0H-Ub-DQe" userLabel="Discover"/>
-                                    <tabBarItem title="Tour" image="tour" id="D7o-0K-dhm"/>
-                                </items>
-                            </tabBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRx-TR-Dua">
-                                <rect key="frame" x="73" y="856" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Previous"/>
-                                <connections>
-                                    <action selector="prevButton:" destination="Vrh-fm-v0P" eventType="touchUpInside" id="TzF-fq-jco"/>
-                                </connections>
-                            </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IKx-cV-Qb8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -66,8 +43,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRx-TR-Dua">
+                                <rect key="frame" x="65" y="769" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Previous"/>
+                                <connections>
+                                    <action selector="prevButton:" destination="Vrh-fm-v0P" eventType="touchUpInside" id="TzF-fq-jco"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-Ui-7Me">
-                                <rect key="frame" x="293" y="856" width="32" height="30"/>
+                                <rect key="frame" x="333" y="769" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,49 +65,37 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="KVJ-yH-2pB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover" id="pyl-pv-3up"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="discoverBar" destination="r0H-Ub-DQe" id="XYH-rm-LQ4"/>
                         <outlet property="exitTour" destination="lhf-ev-TRs" id="0V5-ha-hd6"/>
                         <outlet property="locName" destination="6zM-k3-4eP" id="KmB-fe-tDm"/>
                         <outlet property="mapView" destination="vIa-Gt-Pqz" id="uOU-jU-yfB"/>
-                        <outlet property="menuBar" destination="gA4-R0-qGN" id="BaS-9q-4ry"/>
                         <outlet property="navBar" destination="IKx-cV-Qb8" id="OLv-mU-3ol"/>
                         <outlet property="nextLoc" destination="fpf-Ui-7Me" id="NpS-7U-Eiu"/>
                         <outlet property="prevLoc" destination="zRx-TR-Dua" id="mOZ-gt-C9r"/>
-                        <outlet property="tourBar" destination="D7o-0K-dhm" id="zy4-aL-Vdo"/>
                         <segue destination="NCM-E2-big" kind="presentation" identifier="showDetail" id="vRG-sv-FRN"/>
-                        <segue destination="z5G-bD-39X" kind="show" identifier="tour" id="mVf-bW-wkc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpN-mZ-Zkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="570" y="-378"/>
+            <point key="canvasLocation" x="1479.7101449275362" y="-378.34821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Tour-->
         <scene sceneID="81M-Zf-EuG">
             <objects>
-                <viewController id="z5G-bD-39X" sceneMemberID="viewController">
+                <viewController id="z5G-bD-39X" customClass="TourViewController" customModule="LandmarkNY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aZM-UQ-xSh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyH-62-kDF">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem title="Discover" image="discover" id="CEz-cy-6we" userLabel="Discover"/>
-                                    <tabBarItem title="Tour" image="tour" id="xbn-15-qaA"/>
-                                </items>
-                            </tabBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iav-wG-wbe"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Tour" image="tour" id="Jxf-Aa-ETc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UI7-Ml-Fv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="570" y="362"/>
+            <point key="canvasLocation" x="1610" y="416"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="jmE-6v-0oY">
@@ -179,7 +152,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2T-To-ndI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1349" y="-378"/>
+            <point key="canvasLocation" x="2257.971014492754" y="-378.34821428571428"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="m1c-nW-sy5">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="VmQ-uG-fRf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NCd-iF-Hnf">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Vrh-fm-v0P" kind="relationship" relationship="viewControllers" id="VoQ-Z1-bk7"/>
+                        <segue destination="z5G-bD-39X" kind="relationship" relationship="viewControllers" id="dze-He-Fsx"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="piO-TT-XCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="569.56521739130437" y="-8.7053571428571423"/>
         </scene>
     </scenes>
     <resources>

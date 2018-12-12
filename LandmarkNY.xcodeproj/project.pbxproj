@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE62044621BEC098008AD488 /* inputFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = DE62044521BEC05E008AD488 /* inputFile.txt */; };
+		DE90574021C1618C0038637B /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE90573F21C1618C0038637B /* TourViewController.swift */; };
 		E9CD4D6021B7238700D2D89F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CD4D5F21B7238700D2D89F /* DiscoverViewController.swift */; };
 		E9CD4D6221B7283B00D2D89F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CD4D6121B7283B00D2D89F /* DetailsViewController.swift */; };
 		E9E6384721BE0F4A008559B2 /* inputFile2.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9E6384621BE0F4A008559B2 /* inputFile2.txt */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		DE62044521BEC05E008AD488 /* inputFile.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputFile.txt; sourceTree = "<group>"; usesTabs = 0; };
+		DE90573F21C1618C0038637B /* TourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
 		E9CD4D5F21B7238700D2D89F /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		E9CD4D6121B7283B00D2D89F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E9E6384621BE0F4A008559B2 /* inputFile2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputFile2.txt; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				F80F40A121A5173D00D166CB /* AppDelegate.swift */,
 				F80F40A321A5173D00D166CB /* ViewController.swift */,
 				F80F40A521A5173D00D166CB /* Main.storyboard */,
+				DE90573F21C1618C0038637B /* TourViewController.swift */,
 				E9CD4D6121B7283B00D2D89F /* DetailsViewController.swift */,
 				E9CD4D5F21B7238700D2D89F /* DiscoverViewController.swift */,
 				E9F877EC21BCBBE70096646B /* Location.swift */,
@@ -158,6 +161,7 @@
 				F80F40A421A5173D00D166CB /* ViewController.swift in Sources */,
 				E9F877ED21BCBBE70096646B /* Location.swift in Sources */,
 				F80F40A221A5173D00D166CB /* AppDelegate.swift in Sources */,
+				DE90574021C1618C0038637B /* TourViewController.swift in Sources */,
 				E9CD4D6221B7283B00D2D89F /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
